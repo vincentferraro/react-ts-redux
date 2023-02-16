@@ -1,11 +1,23 @@
-import React from "react"
-import Header from "../component/header"
-import NaviguationBar from "../component/navbar"
-function Root() {
-    return (
-        <div>
-            <Header />
-            <NaviguationBar/>
-        </div>
-    )
-}
+import{ createBrowserRouter } from 'react-router-dom'
+import Home from "../pages/home"
+import ErrorPage from '../pages/errorPage'
+import Presentation from '../pages/presentation'
+const router = createBrowserRouter([
+  {
+    path: "/",
+        element: <Home />,
+        children: [
+            {
+                path: "home",
+                element: <Presentation />
+        }
+    ],
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/contact",
+    element: <h1>Contact page</h1>
+  }
+])
+
+export default router

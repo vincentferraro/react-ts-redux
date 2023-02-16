@@ -1,11 +1,13 @@
-import React from 'React'
-
+import React from "react"
+import Header from "../component/header"
+import NaviguationBar from "../component/navbar"
 function Home() {
     return (
-        
         <div>
-            <h1> Welcome to homePage</h1>
-
+            <Header />
+            <NaviguationBar/>
         </div>
     )
 }
+
+export default Home
